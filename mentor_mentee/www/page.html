@@ -1,0 +1,17 @@
+{% set u=frappe.get_all('Mentee',fields=['full_name','mentor_name'], order_by='full_name asc') %}
+<div>
+<table class="table table-condensed table-hover table-bordered">
+<tr>
+<th class="text-center">Mentee Name</th>
+<th class="text-center">Mentor Name</th>
+<tr>
+{% for i in u %}
+<tr>
+<td style="width:50%; text-align:center;">{{i.full_name}}</td>
+<td style="width:50%; text-align:center;">{{i.mentor_name}}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+

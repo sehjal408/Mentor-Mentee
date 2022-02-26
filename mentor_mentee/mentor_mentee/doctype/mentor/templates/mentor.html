@@ -1,0 +1,97 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div>
+
+<div><strong>Full Name: </strong>{{full_name}}</div>
+<div><strong>Address: </strong>{{address}}</div>
+<div><strong>Phone No: </strong>{{phone}}</div>
+<div><strong>Email: </strong>{{email}}</div>
+<div><strong>Mentor Code: </strong>{{code}}</div>
+<br><br>
+<div><strong>List of students: </strong></div>
+<br>
+<table class="table table-condensed table-hover table-bordered">
+<tr>
+<th class="text-center">Roll No</th>
+<th class="text-center">Full Name</th>
+<th class="text-center">Address</th>
+<th class="text-center">Email</th>
+<th class="text-center">Phone</th>
+<tr>
+
+{% if doc.code=="MS" %}
+{% set students=frappe.get_all
+('Mentee',filters={'mentor_name':'MS'},fields=['roll_no','full_name','address','email','phone'], order_by='roll_no asc') %}
+{% for student in students %}
+<tr>
+<td style="width:10%; text-align:center;">{{student.roll_no}}</td>
+<td style="width:10%; text-align:center;">{{student.full_name}}</td>
+<td style="width:10%; text-align:center;">{{student.address}}</td>
+<td style="width:10%; text-align:center;">{{student.email}}</td>
+<td style="width:10%; text-align:center;">{{student.phone}}</td>
+</tr>
+{% endfor %}
+
+
+{% elif doc.code=="KK" %}
+{% set students=frappe.get_all
+('Mentee',filters={'mentor_name':'KK'},fields=['roll_no','full_name','address','email','phone'], order_by='roll_no asc') %}
+{% for student in students %}
+<tr>
+<td style="width:10%; text-align:center;">{{student.roll_no}}</td>
+<td style="width:10%; text-align:center;">{{student.full_name}}</td>
+<td style="width:10%; text-align:center;">{{student.address}}</td>
+<td style="width:10%; text-align:center;">{{student.email}}</td>
+<td style="width:10%; text-align:center;">{{student.phone}}</td>
+</tr>
+{% endfor %}
+
+
+{% elif doc.code=="MK" %}
+{% set students=frappe.get_all
+('Mentee',filters={'mentor_name':'MK'},fields=['roll_no','full_name','address','email','phone'], order_by='roll_no asc') %}
+{% for student in students %}
+<tr>
+<td style="width:10%; text-align:center;">{{student.roll_no}}</td>
+<td style="width:10%; text-align:center;">{{student.full_name}}</td>
+<td style="width:10%; text-align:center;">{{student.address}}</td>
+<td style="width:10%; text-align:center;">{{student.email}}</td>
+<td style="width:10%; text-align:center;">{{student.phone}}</td>
+</tr>
+{% endfor %}
+
+
+{% elif doc.code=="HK" %}
+{% set students=frappe.get_all
+('Mentee',filters={'mentor_name':'HK'},fields=['roll_no','full_name','address','email','phone'], order_by='roll_no asc') %}
+{% for student in students %}
+<tr>
+<td style="width:10%; text-align:center;">{{student.roll_no}}</td>
+<td style="width:10%; text-align:center;">{{student.full_name}}</td>
+<td style="width:10%; text-align:center;">{{student.address}}</td>
+<td style="width:10%; text-align:center;">{{student.email}}</td>
+<td style="width:10%; text-align:center;">{{student.phone}}</td>
+</tr>
+{% endfor %}
+
+
+{% elif doc.code=="GK" %}
+{% set students=frappe.get_all
+('Mentee',filters={'mentor_name':'GK'},fields=['roll_no','full_name','address','email','phone'], order_by='roll_no asc') %}
+{% for student in students %}
+<tr>
+<td style="width:10%; text-align:center;">{{student.roll_no}}</td>
+<td style="width:10%; text-align:center;">{{student.full_name}}</td>
+<td style="width:10%; text-align:center;">{{student.address}}</td>
+<td style="width:10%; text-align:center;">{{student.email}}</td>
+<td style="width:10%; text-align:center;">{{student.phone}}</td>
+</tr>
+{% endfor %}
+
+{% endif %}
+</table>
+</div>
+{% endblock %}
+
+<!-- this is a sample default web page template -->

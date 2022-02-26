@@ -1,0 +1,17 @@
+{% set m=frappe.get_all('Mentee',fields=['roll_no','full_name','route'], order_by='roll_no asc') %}
+<div>
+<table class="table table-condensed table-hover table-bordered">
+<tr>
+<th class="text-center">Roll No</th>
+<th class="text-center">Mentee Name</th>
+<tr>
+{% for i in m %}
+<tr>
+<td style="width:50%; text-align:center;"><a href={{i.route}}> {{i.roll_no}}</a></td>
+<td style="width:50%; text-align:center;">{{i.full_name}}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+
