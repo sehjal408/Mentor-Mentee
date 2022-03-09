@@ -8,37 +8,37 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "mentor_name",
-  "mentee_name",
+  "mentor",
+  "mentee",
   "route"
  ],
  "fields": [
   {
-   "fieldname": "mentor_name",
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "mentor",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Mentor Name",
+   "label": "Mentor",
    "options": "Mentor",
    "reqd": 1
   },
   {
-   "fieldname": "mentee_name",
+   "fetch_from": "full_name",
+   "fieldname": "mentee",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Mentee Name",
+   "label": "Mentee",
    "options": "Mentee",
    "reqd": 1
-  },
-  {
-   "fieldname": "route",
-   "fieldtype": "Data",
-   "label": "Route"
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-02-24 15:07:21.332755",
+ "modified": "2022-03-08 23:07:56.697693",
  "modified_by": "Administrator",
  "module": "Mentor Mentee",
  "name": "Relation",

@@ -9,6 +9,4 @@ class Mentee(WebsiteGenerator):
 		self.full_name=f'{self.first_name} {self.last_name or ""}'
 		
 		
-		
-		
 
